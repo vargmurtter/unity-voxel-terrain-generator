@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelTerrainGenerator", "Assembly-CSharp.csproj", "{B2EA5177-5249-7722-BB93-A4B0E696ADDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelTerrainGenerator", "Assembly-CSharp-firstpass.csproj", "{29FCC6E4-F44A-3F6B-2789-47884E7D2E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelTerrainGenerator", "Assembly-CSharp-Editor-firstpass.csproj", "{77816FED-A3D1-151E-9762-8B4DB38CBE53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{B2EA5177-5249-7722-BB93-A4B0E696ADDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2EA5177-5249-7722-BB93-A4B0E696ADDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2EA5177-5249-7722-BB93-A4B0E696ADDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FCC6E4-F44A-3F6B-2789-47884E7D2E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FCC6E4-F44A-3F6B-2789-47884E7D2E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FCC6E4-F44A-3F6B-2789-47884E7D2E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FCC6E4-F44A-3F6B-2789-47884E7D2E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77816FED-A3D1-151E-9762-8B4DB38CBE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77816FED-A3D1-151E-9762-8B4DB38CBE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77816FED-A3D1-151E-9762-8B4DB38CBE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77816FED-A3D1-151E-9762-8B4DB38CBE53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

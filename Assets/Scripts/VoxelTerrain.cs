@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,22 +17,30 @@ public class VoxelTerrain : MonoBehaviour {
     public float amplitude = 10f;
 
     [Header("Other Settings")]
+    public Transform bounds;
     public bool enableMinecraft = false;
     
     private Transform _transform;
     private GameObject block;
+    private string lastParentName, currentParentName;
 
     private void Start()
     {
         _transform = GetComponent<Transform>();
-        GenerateTerrain();
+        StartCoroutine(GenerateTerrain());
     }
 
-    private void GenerateTerrain()
+    private IEnumerator GenerateTerrain()
     {
-        for (int x = 0; x < xSize; x++)
+        string guid = Guid.NewGuid().ToString();
+        GameObject parent = new GameObject(guid);
+        currentParentName = guid;
+
+        Vector3 playerPos = _transform.position;
+
+        for (int x = (int)playerPos.x; x < xSize + (int)playerPos.x; x++)
         {
-            for (int z = 0; z < zSize; z++)
+            for (int z = (int)playerPos.z; z < zSize + (int)playerPos.z; z++)
             {
                 float y = Mathf.PerlinNoise(x / frequency, z / frequency) * amplitude;
                 
@@ -41,9 +50,33 @@ public class VoxelTerrain : MonoBehaviour {
                 else if (y > amplitude / 3 && y <= amplitude / 3 * 2) block = blocks[1]; // grass
                 else block = blocks[2]; // stone
 
-                GameObject currentBlock = Instantiate(block, new Vector3(x, y, z), Quaternion.identity);
-                currentBlock.transform.parent = _transform;
+                GameObject currentBlock = Instantiate(
+                    block, 
+                    new Vector3(x - xSize / 2, y, z - zSize / 2), 
+                    Quaternion.identity
+                );
+
+                currentBlock.transform.parent = parent.transform;
             }
+        }
+
+
+        if (lastParentName != null)
+        {
+            Destroy(GameObject.Find(lastParentName));
+        }
+
+        yield return null;
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Bounds"))
+        {
+            lastParentName = currentParentName;
+            StartCoroutine(GenerateTerrain());
+            bounds.transform.position = new Vector3(_transform.position.x, 0f, _transform.position.z);
         }
     }
 
