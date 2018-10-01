@@ -193,18 +193,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab775a326c9f5b4a915baade0c6e964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocks:
-  - {fileID: 1450505869361632, guid: 2d3de9a9152d3bb4c8c522aa97e6e7e5, type: 2}
-  - {fileID: 1070306680397366, guid: c1c6ba0ebb84d2c4daf8dd8ebd91782c, type: 2}
-  - {fileID: 1154503506342210, guid: d0669754bd4d4cd4e9c8a10cbce8a133, type: 2}
+  blankCube: {fileID: 1357995286611560, guid: cd413e91e73c9c0468b8d3d545378eb2, type: 2}
+  soil: {fileID: 2100000, guid: 190fa5905d760d54495bdaf3eccc1bfc, type: 2}
+  grass: {fileID: 2100000, guid: ec4418e4d427ee349a3aeeb2647de0ea, type: 2}
+  stone: {fileID: 2100000, guid: 279e197e0813d45489373923d41a86d3, type: 2}
   xSize: 100
   zSize: 100
   frequency: 21
   amplitude: 20
   bounds: {fileID: 1926420386}
-  enableMinecraft: 1
-  lastParentName: 
-  currentParentName: 
+  enableMinecraft: 0
 --- !u!1 &1359087067
 GameObject:
   m_ObjectHideFlags: 0
